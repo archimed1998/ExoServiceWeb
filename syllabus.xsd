@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?> <!--LE PROLOGUE-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <!--ICI J'AI DECLARE LA RACINE (syllabus) QUI EST UNE SEQUENCE DE COURS ET PEUT CONTENIR UNE INFINITE DE COURS-->
+ <xs:element name="syllabus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="cours"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+<!--ICI JE VAIS DECLARE COURS QUI CONSTITUE 3 BLOQUE -->
+ <xs:element name="cours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="descriptionCours"/>
+        <xs:element ref="Enseignants"/>
+        <xs:element ref="lieuHoraire"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+<!--DECLARATION DE LA DESCRIPTION DU COURS CONSTITUANT UNE SEQUENCE DE 5 ELEMENTS ENSUITE LA DECLARATION DES 5 ELEMENTS-->
+  <xs:element name="descriptionCours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="intituleCours"/>
+        <xs:element ref="UECours"/>
+        <xs:element ref="ChargeTravail"/>
+        <xs:element ref="semestre"/>
+        <xs:element ref="niveau"/>
+        <xs:element ref="prerequis"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="intituleCours" type="xs:string"/>
+  <xs:element name="UECours" type="xs:string"/>
+  <xs:element name="semestre" type="xs:string"/>
+  <xs:element name="niveau" type="xs:string"/>
+  <xs:element name="prerequis" type="xs:string"/>
+
+<!--ICI JE VAIS DECLARE L'ELEMENT ChargeTravail QUI CONTIENT 3 ELEMENTS -->
+   <xs:element name="ChargeTravail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="credit"/>
+        <xs:element ref="coeff"/>
+        <xs:element ref="volumeHoraire"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+ <xs:element name="credit" fixed="6" type="xs:positiveInteger"/>
+  <xs:element name="coeff" fixed="2" type="xs:positiveInteger"/>
+  <xs:element name="volumeHoraire" default="60" type="xs:positiveInteger"/>
+
+
+
+<!--ICI JE VAIS DECLARE L'ELEMENT ENSEIGNANT QUI CONTIENT L'ELEMENT NOMBRE ENSEIGNEMENT PUIS LA DECLARATION DE L'ELEMENT NOMBRE ENSEIGNEMENT-->
+  <xs:element name="Enseignants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="NbrEnseignement"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+    <xs:element name="NbrEnseignement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="prenom-nom"/>
+        <xs:element ref="adresseBureau"/>
+        <xs:element ref="couriel"/>
+        <xs:element ref="heuresBureau"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+ <xs:element name="prenom-nom" type="xs:string"/>
+  <xs:element name="adresseBureau" type="xs:string"/>
+ <xs:element name="couriel" type="mail"/> <!--CONTROLE DE SAISI POUR L'ADRESSE MAIL-->
+  <xs:simpleType name="mail"> 
+    <xs:restriction base="xs:string"> 
+      <xs:pattern value="([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})"/>
+    </xs:restriction> 
+  </xs:simpleType> 
+  <xs:element name="heuresBureau" type="xs:string"/>
+
+ <!--DECLARATION DE L'ELEMENT LIEUHORAIRE CONSTITUANT UNE SEQUENCE DE 3 ELEMENTS ENSUITE LA DECLARATION DES 3 ELEMENTS-->
+  <xs:element name="lieuHoraire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Salle"/>
+        <xs:element ref="HeureDebut"/>
+        <xs:element ref="HeureFin"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Salle" type="xs:string"/>
+  <xs:element name="HeureDebut" type="xs:time"/>
+  <xs:element name="HeureFin" type="xs:time"/>
+</xs:schema>

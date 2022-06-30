@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT syllabus (cours+)>
+<!ELEMENT cours (descriptionCours, Enseignants, lieuHoraire)>
+<!ELEMENT descriptionCours (intituleCours, UECours, ChargeTravail, semestre, niveau, prerequis)>
+<!ELEMENT intituleCours (#PCDATA)>
+<!ELEMENT UECours (#PCDATA)>
+<!ELEMENT ChargeTravail (credit, coeff, volumeHoraire) >
+<!ELEMENT credit (#PCDATA)>
+<!ELEMENT coeff (#PCDATA)>
+<!ELEMENT volumeHoraire (#PCDATA)>
+<!ELEMENT semestre (#PCDATA)>
+<!ELEMENT niveau (#PCDATA)>
+<!ELEMENT prerequis (#PCDATA)>
+<!ELEMENT Enseignants (NbrEnseignement)>
+<!ELEMENT NbrEnseignement (prenom-nom, adresseBureau, couriel, heuresBureau)>
+<!ELEMENT prenom-nom (#PCDATA) >
+<!ELEMENT adresseBureau (#PCDATA)>
+<!ELEMENT couriel (#PCDATA)>
+<!ELEMENT heuresBureau (#PCDATA)>
+<!ELEMENT lieuHoraire (Salle, HeureDebut, HeureFin)>
+<!ELEMENT Salle (#PCDATA)>
+<!ELEMENT HeureDebut (#PCDATA)>
+<!ELEMENT HeureFin (#PCDATA)>
+
