@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<syllabus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="syllabus.xsd">
+	<cours>
+		<descriptionCours>
+			<intituleCours>Services Web</intituleCours>
+			<UECours>Web et IA INF 414</UECours>
+			<ChargeTravail>
+				<credit>6</credit>
+				<coeff>2</coeff>
+				<volumeHoraire>60</volumeHoraire>
+			</ChargeTravail>
+			<semestre>Semestre1</semestre>
+			<niveau>Master1</niveau>
+			<prerequis>HTML</prerequis>
+		</descriptionCours>
+		<Enseignants>
+			<NbrEnseignement>
+				<prenom-nom>Mouhamadou Thiam</prenom-nom>
+				<adresseBureau>Bureau no ...</adresseBureau>
+				<couriel>mabigue@gmail.com</couriel>
+				<heuresBureau>12:00:00 a 15:00:00</heuresBureau>
+			</NbrEnseignement>
+		</Enseignants>
+		<lieuHoraire>
+			<Salle>Salle Informatique</Salle>
+			<HeureDebut>15:00:00</HeureDebut>
+			<HeureFin>17:00:00</HeureFin>
+		</lieuHoraire>
+	</cours>
+</syllabus>
